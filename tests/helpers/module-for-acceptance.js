@@ -5,9 +5,9 @@ import destroyApp from '../helpers/destroy-app';
 
 const { RSVP: { Promise } } = Ember;
 
-export default function(name, options = {}) {
+export default function (name, options = {}) {
   module(name, {
-    beforeEach() {
+    beforeEach() { // eslint-disable-line consistent-return
       this.application = startApp();
 
       if (options.beforeEach) {
@@ -16,7 +16,8 @@ export default function(name, options = {}) {
     },
 
     afterEach() {
-      let afterEach = options.afterEach && options.afterEach.apply(this, arguments);
+      const afterEach = options.afterEach && options.afterEach.apply(this, arguments);
+
       return Promise.resolve(afterEach).then(() => destroyApp(this.application));
     }
   });
