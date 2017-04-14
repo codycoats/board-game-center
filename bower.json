@@ -1,5 +1,6 @@
 {
   "name": "board-game-center",
   "dependencies": {
+    "blob-polyfill": "^1.0.20150320"
   }
 }
