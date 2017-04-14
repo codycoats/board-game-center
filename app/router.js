@@ -6,7 +6,8 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
+// TODO: remove lint override when we have a route and it actually returns something
+Router.map(function () { // eslint-disable-line 
 });
 
 export default Router;
